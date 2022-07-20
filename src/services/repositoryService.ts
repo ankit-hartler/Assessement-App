@@ -1,10 +1,10 @@
 import instance from "./axiosInstance"
 
-export const getRepositories = async () => {
+export const getRepositories = async (searchQuery: string) => {
   const response = await instance.post("", {
     query: `
         {
-            search(query: "is:public", type: REPOSITORY, first: 50) {
+            search(query: "${searchQuery}", type: REPOSITORY, first: 50) {
               repositoryCount
               pageInfo {
                 endCursor

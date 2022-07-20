@@ -4,10 +4,11 @@ import { Table} from 'antd';
 import { listOption } from '../types';
 
 type repositoryPropsType = {
-list : listOption[]
+list : listOption[],
+loading: boolean
 }
 
-const RepositoryTable: React.FC<repositoryPropsType> = ({list}) => {
+const RepositoryTable: React.FC<repositoryPropsType> = ({list, loading}) => {
 
   const columns = [
     {
@@ -29,7 +30,7 @@ const RepositoryTable: React.FC<repositoryPropsType> = ({list}) => {
     },
   ];
   return (
-    <div><Table columns={columns} dataSource={list} pagination={false} /></div>
+    <div><Table columns={columns} dataSource={list} pagination={false} loading={loading} /></div>
   )
 };
 
