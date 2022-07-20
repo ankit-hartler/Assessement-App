@@ -16,6 +16,7 @@ export const getRepositories = async () => {
                     name
                     stargazerCount
                     forkCount
+                    url
                   }
                 }
               }
